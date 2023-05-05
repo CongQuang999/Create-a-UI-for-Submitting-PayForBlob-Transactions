@@ -1,4 +1,4 @@
-Create-a-UI-for-Submitting-PayForBlob-Transactions
+# Create-a-UI-for-Submitting-PayForBlob-Transactions
 #Here is an example of a user interface to send a PayForBlob transaction on the Celestia Network using React and web3.js:
 
 import React, { useState } from "react"; import Web3 from "web3"; import PayForBlobContract from "./contracts/PayForBlob.json";
@@ -11,7 +11,7 @@ const handleAmountChange = (e) => setAmount(e.target.value); const handleAddress
 
 const handleSubmit = async (e) => { e.preventDefault(); try { const accounts = await window.ethereum.request({ method: "eth_requestAccounts", }); const contractAddress = "0x123..."; // address of the PayForBlob smart contract on Celestia Network const contractInstance = new web3.eth.Contract( PayForBlobContract.abi, contractAddress ); await contractInstance.methods.pay(address).send({ from: accounts[0], value: web3.utils.toWei(amount, "ether"), }); setStatus("Transaction successful!"); } catch (error) { console.error(error); setStatus("There was an error sending the transaction."); } }; return (
 
-PayForBlob
+# PayForBlob
 Amount (CELO):
 Recipient address:
 Send
